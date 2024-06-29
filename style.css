@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.flag-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_India.png/1280px-Flag_of_India.png'); /* Replace with your Indian flag image */
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 1;
+}
+
+.picker-container {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.picker {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #FFD700; /* Golden color for the picker */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.picker-wheel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+  transition: transform 3s ease-out;
+}
+
+.picker-segment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--segment-color);
+  transform-origin: 100% 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.picker-segment:nth-child(1) {
+  --segment-color: #1E7FCB; /* Blue color for Option 1 */
+  transform: rotate(0deg);
+}
+
+.picker-segment:nth-child(2) {
+  --segment-color: #007A33; /* Green color for Option 2 */
+  transform: rotate(180deg);
+}
+
+.picker-center {
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 5px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.option-input {
+  width: 200px;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.spin-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #FFD700; /* Golden color for the button */
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.spin-btn:hover {
+  background-color: #e6ac00; /* Darker shade of golden on hover */
+}
+
+.result {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #FFD700; /* Golden color for the result text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
